@@ -1,15 +1,14 @@
-import { View, Text } from "react-native";
+import { View, Text, SafeAreaView } from "react-native";
+import SafeAreaStyle from '../Components/SafeAreaStyle'
+import HomeScreen from "./Screens/Homescreen";
 
 export default function App() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
+    <SafeAreaView
+    style={SafeAreaStyle.AndroidSafeArea}
     >
-      <Text>Universal React with Expo</Text>
-    </View>
+      
+      <HomeScreen />
+    </SafeAreaView>
   );
 }
