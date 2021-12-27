@@ -10,15 +10,13 @@ export default function ProductItem({product}) {
         <View style={styles.rightContainor}> 
             <Text style={styles.title} numberOfLines={3}> {product.title} </Text>
             <View style={styles.rating}>
-                <FontAweSome style={styles.star} name="star" size={15} color="orange" />
-                <FontAweSome  style={styles.star} name="star" size={15} color="orange" />
-                <FontAweSome  style={styles.star} name="star" size={15} color="orange" />
-                <FontAweSome  style={styles.star} name="star" size={15} color="orange" />
-                <FontAweSome  style={styles.star} name="star" size={15} color="orange" />
-            
-                <Text>13,369</Text>
+                {[0,0,0,0,0].map((el, i) => (
+                    <FontAweSome name={i < Math.floor(product.avgRating) ? "star": "star-0"} size={16} color="#ffd700" />
+                ))}
+                
+                <Text>  {product.ratings} </Text>
             </View>
-            <Text style={styles.price}>from $13.57 </Text>
+            <Text style={styles.price}> from ${product.price} </Text>
         </View>
     </View>
     )
