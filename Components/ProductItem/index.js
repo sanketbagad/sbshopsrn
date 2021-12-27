@@ -3,13 +3,12 @@ import { View, Text, Image, StyleSheet } from 'react-native'
 import FontAweSome from 'react-native-vector-icons/FontAwesome'
 
 
-export default function ProductItem() {
+export default function ProductItem({product}) {
     return (
         <View style={styles.root}>
-        <Image style={styles.image} source={{uri : `https://notjustdev-dummy.s3.us-east-2.amazonaws.com/images/products/cleanarchitecture.jpg
-`}} />
+        <Image style={styles.image} source={{uri: product.image}} />
         <View style={styles.rightContainor}> 
-            <Text style={styles.title} numberOfLines={3}>Logitech M221 Wireless Mouse, Silent Buttons, 2.4 GHz with USB Mini Receiver, 1000 DPI Optical Tracking, 18-Month Battery Life, Ambidextrous PC/Mac/Laptop - Charcoal Grey</Text>
+            <Text style={styles.title} numberOfLines={3}> {product.title} </Text>
             <View style={styles.rating}>
                 <FontAweSome style={styles.star} name="star" size={15} color="orange" />
                 <FontAweSome  style={styles.star} name="star" size={15} color="orange" />
