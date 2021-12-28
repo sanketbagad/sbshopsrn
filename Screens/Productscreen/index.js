@@ -4,6 +4,7 @@ import styles from './styles'
 import product from "../../data/products";
 import products from '../../data/products';
 import { Picker } from '@react-native-picker/picker';
+import QuantitySelector from '../../Components/QuantitySelector';
 
 export default function ProductScreen() {
     const [selectedValue, setSelectedValue] = React.useState(product.options ? product.options[0] : null);
@@ -24,7 +25,7 @@ export default function ProductScreen() {
             <Text style={styles.price}>{product.price}</Text>
 
             <Text style={styles.description}>{product.description}</Text>
-            
+            <QuantitySelector />
         </View>
     )
 }
